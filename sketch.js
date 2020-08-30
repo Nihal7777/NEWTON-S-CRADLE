@@ -3,34 +3,35 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+const Constraint = Matter.Body;
 
 var bobObject1, bobObject2, bobObject3, bobObject4, bobObject5,roofObject,rope1,rope2,rope3,rope4,rope5;
-
+var Diameter 
 function preload()
 {
 	
 }
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(1000, 1000);
 
 
 	engine = Engine.create();
 	world = engine.world;
 
-	bobObject1 = new  bob();
-	bobObject2 = new bob ();
-	bobObject3= new bob ();
-	bobObject4= new bob();
-	bobObject5 = new bob ();
+	bobObject1 = new  Bob(480,402,23);
+	bobObject2 = new Bob (680,412,23);
+	bobObject3= new Bob (765,403,23);
+	bobObject4= new Bob(870,380,23);
+	bobObject5 = new Bob (880,398,23);
 
-    roofObject = new roof(700,600,400,50);
+    roofObject = new Roof(680,100,600,15);
 	
-	rope1 = new rope(bobObject1.body,roofObject.body,bobDiameter*2,0);
-	rope2 = new rope(bobObject2.body,roofObject.body,bobDiameter*2,0);
-	rope3 = new rope(bobObject3.body,roofObject.body,bobDiameter*2,0);
-	rope4 = new rope(bobObject4.body,roofObject.body,bobDiameter*2,0);
-	rope5 = new rope(bobObject5.body,roofObject.body,bobDiameter*2,0);
+	rope1 = new Rope(bobObject1.body,roofObject.body,Diameter*2,0);
+	rope2 = new Rope(bobObject2.body,roofObject.body,Diameter*2,0);
+	rope3 = new Rope(bobObject3.body,roofObject.body,Diameter*2,0);
+	rope4 = new Rope(bobObject4.body,roofObject.body,Diameter*2,0);
+	rope5 = new Rope(bobObject5.body,roofObject.body,Diameter*2,0);
 
 	Engine.run(engine);
   
@@ -41,7 +42,18 @@ function draw() {
   rectMode(CENTER);
   background(0);
   
-  drawSprites();
+  bobObject1.display();
+ bobObject2.display();
+bobObject3.display();
+ bobObject4.display();
+  bobObject5.display();
+  roofObject.display();
+	  rope1.display();
+	  rope2.display();
+	  rope3.display();
+	  rope4.display();
+	  rope5.display();
+ 
  
 }
 

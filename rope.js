@@ -19,12 +19,12 @@ display(){
 
     var Anchor1X=pointA.x;
     var Anchor1Y=pointA.y;
-
+     push ();
     var Anchor2X=pointB.x+this.offsetX;
     var Anchor2Y=pointB.y+this.offsetY;
 
     line(Anchor1X,Anchor1Y,Anchor2X,Anchor2Y);
-    
+    pop ();
 }
 
 

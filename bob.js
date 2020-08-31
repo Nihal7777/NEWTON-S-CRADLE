@@ -3,8 +3,8 @@ class Bob {
         var options = {
             isStatic:false,
             restitution:1,
-            friction:0.5,
-            density:1.2
+            friction:0,
+            density:0.8
         }
         this.body = Bodies.circle(x, y, radius, options);
         this.radius=radius;
@@ -14,6 +14,7 @@ class Bob {
              var pos=this.body.position;
              var angle=this.body.angle;
              push ();
+            
              rotate (angle);
              fill("purple");
              ellipseMode(RADIUS);

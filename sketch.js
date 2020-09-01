@@ -19,11 +19,11 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	bobObject1 = new  Bob(480,402,23);
-	bobObject2 = new Bob (680,412,23);
-	bobObject3= new Bob (765,403,23);
-	bobObject4= new Bob(870,380,23);
-	bobObject5 = new Bob (880,398,23);
+	bobObject1 = new  Bob(480,400,25);
+	bobObject2 = new Bob (530,400,25);
+	bobObject3= new Bob (580,400,25);
+	bobObject4= new Bob(630,400,25);
+	bobObject5 = new Bob (680,400,25);
 
 	roofObject = new Roof(680,100,600,15);
 	Diameter=50;
@@ -57,6 +57,13 @@ bobObject3.display();
  
  
 }
+
+function keyPressed(){
+	if(keyCode===UP_ARROW){
+	 Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-50});
+	}
+}
+
 
 
 
